@@ -1,0 +1,22 @@
+┌ balfrin:balfrin-ln002 /scratch/mch/bcumming/software/bin
+└── OMP_NUM_THREADS=16 srun -n4 -N1 --partition=debug -t5 ./wrapper ./burn -ggemm,12000 -cgemm,4000 -d180 --batch
+srun: job 227888 queued and waiting for resources
+srun: job 227888 has been allocated resources
+nid001096:cpu    321 iterations,   228.27 GFlops,    180.0 seconds,    0.384 Gbytes
+nid001096:gpu   1122 iterations, 21527.63 GFlops,    180.1 seconds,    3.456 Gbytes
+nid001096:power [total 2722, cpu 136, gpu0 496, gpu1 493, gpu2 493, gpu3 491]
+nid001096:cpu    389 iterations,   276.42 GFlops,    180.1 seconds,    0.384 Gbytes
+nid001096:gpu   1122 iterations, 21541.83 GFlops,    180.0 seconds,    3.456 Gbytes
+nid001096:cpu    330 iterations,   234.33 GFlops,    180.3 seconds,    0.384 Gbytes
+nid001096:gpu   1139 iterations, 21867.20 GFlops,    180.0 seconds,    3.456 Gbytes
+nid001096:cpu    331 iterations,   234.99 GFlops,    180.3 seconds,    0.384 Gbytes
+nid001096:gpu   1136 iterations, 21805.51 GFlops,    180.0 seconds,    3.456 Gbytes
+┌ balfrin:balfrin-ln002 /scratch/mch/bcumming/software/bin
+└── OMP_NUM_THREADS=16 srun -n4 -N1 --partition=debug -t5 ./wrapper ./burn -ggemm,12000 -d180 --batch
+srun: job 228017 queued and waiting for resources
+srun: job 228017 has been allocated resources
+nid001112:gpu   1137 iterations, 21820.90 GFlops,    180.1 seconds,    3.456 Gbytes
+nid001112:gpu   1129 iterations, 21664.32 GFlops,    180.1 seconds,    3.456 Gbytes
+nid001112:gpu   1120 iterations, 21489.99 GFlops,    180.1 seconds,    3.456 Gbytes
+nid001112:gpu   1129 iterations, 21659.08 GFlops,    180.1 seconds,    3.456 Gbytes
+nid001112:power [total 2611, cpu 101, gpu0 493, gpu1 489, gpu2 493, gpu3 491]

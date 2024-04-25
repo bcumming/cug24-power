@@ -63,7 +63,7 @@ def report_cab(label):
     full,partial = power_from(r)
     cap = r["powercap"]
     n = len(cap)
-    measured = r["cabinet-power"]
+    #measured = r["cabinet-power"]
     time = r["meantime"]
     idx = cap.index(560)
     speedup = [100*(time[idx]-time[i])/time[idx] for i in range(n)]
@@ -84,7 +84,7 @@ def report_cab(label):
     print()
 
     # plot: cabinet power at different power caps
-    fig, ax = plt.subplots()
+    _, ax = plt.subplots()
 
     width = 6
     ax.axhline(y=339, color='red')
@@ -97,7 +97,7 @@ def report_cab(label):
     plt.savefig(f'{label}_cabinet.png')
 
     # plot: energy to solution (J) at different power caps
-    fig, ax = plt.subplots()
+    _, ax = plt.subplots()
 
     width = 6
     ax.bar([cap[i]-width/2 for i in range(n)], ETS_full, width, color='blue',label="128-node cabinet")
@@ -112,13 +112,13 @@ def report_cab(label):
     plt.savefig(f'{label}_ets.png')
 
     # plot: relative time and energy to solution at different power caps
-    fig, ax = plt.subplots()
+    _, ax = plt.subplots()
 
     width = 6
     offset = 3
     ax.bar([cap[i]-offset for i in range(n)], speedup, width, color='blue',label="relative TTS")
-    ax.bar([cap[i]+offset/2 for i in range(n)], EFF_full, width/2, color='red', label="relative ETS 128/cab")
-    ax.bar([cap[i]+offset*3/2 for i in range(n)], EFF_part, width/2, color='green', label="relative ETS 112/cab")
+    ax.bar([cap[i]+offset for i in range(n)], EFF_full, width, color='orange', label="relative ETS 128/cab")
+    #ax.bar([cap[i]+offset*3/2 for i in range(n)], EFF_part, width/2, color='green', label="relative ETS 112/cab")
     ax.set_xlabel('power cap (W)')
     ax.legend(loc='upper left')
     ax.set_title(f"Relative TTS and ETS for {label}")
@@ -127,7 +127,7 @@ def report_cab(label):
     plt.savefig(f'{label}_relative.png')
 
 report_cab("icon-sol")
-report_cab("icon-acc")
+#report_cab("icon-acc")
 
 #plt.plot(powercap, mintime)
 #plt.plot(powercap, maxtime)

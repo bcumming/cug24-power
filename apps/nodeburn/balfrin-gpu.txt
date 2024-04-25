@@ -1,0 +1,5 @@
+gpuflops 21820.90 21664.32 21489.99 21659.08
+power-total 2611
+power-cpu 101
+power-gpu0 493 489 493 491
+
